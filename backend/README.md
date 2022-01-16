@@ -36,7 +36,7 @@ Foi proposto a criação de um projeto em Node.js com MQTT que simulasse um sist
 
 ## :bricks: Instalação
 
-Este projeto usa [Node.js](https://nodejs.org/en/) e[Yarn](https://yarnpkg.com), você precisará deles para instalar as dependências.
+Este projeto usa [Node.js](https://nodejs.org/en/) e[Yarn](https://yarnpkg.com), você precisará deles para instalar as dependências. Ao final deste tópico está as instruções para testar com o projeto "deployado".
 
 ### :construction: Pré-requisitos
 
@@ -218,6 +218,50 @@ Podendo ser visto em deploy no seguinte link: [https://market-sd.herokuapp.com](
 
   E retorna status 200.
 
+### 🚧 Deploy
+
+Foi feito o deploy deste projeto no Heroku. Você pode usar essa url `https://darkcleopas-delivery-mqtt.herokuapp.com/` para realizar os testes sem precisar rodar a api principal. 
+
+Para testar o MQTT, rode o arquivo `subscriber.js`. A cada finalização de pedido feita (`/finish_orders`), será mostrado uma nova atualização no subscriber (além dos pedidos feitos anteriormente), assim:
+
+```bash
+Conectado ao broker MQTT
+Um novo pedido apareceu!
+{
+  orders: [
+    {
+      productId: 3,
+      productName: 'Nikito',
+      productPrice: 2,
+      productAmount: 1,
+      orderValue: 2
+    }
+  ],
+  ordersValue: 2,
+  address: 'Ceilandia, em frente ao lote 14'
+}
+Um novo pedido apareceu!
+{
+  orders: [
+    {
+      productId: 1,
+      productName: 'Água',
+      productPrice: 1.9,
+      productAmount: 1,
+      orderValue: 1.9
+    },
+    {
+      productId: 2,
+      productName: 'Café',
+      productPrice: 14.9,
+      productAmount: 3,
+      orderValue: 44.7
+    }
+  ],
+  ordersValue: 46.6,
+  address: 'Rua das Mangas Azedas'
+}
+```
 
 ## :page_facing_up: Licença
 
