@@ -84,77 +84,71 @@ Podendo ser visto em deploy no seguinte link: [https://market-sd.herokuapp.com](
 
   Retorna um JSON com a lista de produtos cadastrados
 
-  ```json
-
-	[
-  {
-    "id": 1,
-    "name": "Água",
-    "price": 1.9,
-    "category": "BEBIDAS"
-  },
-  {
-    "id": 2,
-    "name": "Café",
-    "price": 14.9,
-    "category": "BEBIDAS"
-  },
-  {
-    "id": 3,
-    "name": "Nikito",
-    "price": 2,
-    "category": "LANCHES"
-  },
-  {
-    "id": 4,
-    "name": "Fini",
-    "price": 4.45,
-    "category": "LANCHES"
-  },
-  {
-    "id": 5,
-    "name": "Arroz",
-    "price": 17.89,
-    "category": "ALIMENTOS"
-  },
-  {
-    "id": 6,
-    "name": "Feijão",
-    "price": 6.9,
-    "category": "ALIMENTOS"
-  }
-]
-
-  ```
-
+    ```json
+    [
+        {
+            "id": 1,
+            "name": "Água",
+            "price": 1.9,
+            "category": "BEBIDAS"
+        },
+        {
+            "id": 2,
+            "name": "Café",
+            "price": 14.9,
+            "category": "BEBIDAS"
+        },
+        {
+            "id": 3,
+            "name": "Nikito",
+            "price": 2,
+            "category": "LANCHES"
+        },
+        {
+            "id": 4,
+            "name": "Fini",
+            "price": 4.45,
+            "category": "LANCHES"
+        },
+        {
+            "id": 5,
+            "name": "Arroz",
+            "price": 17.89,
+            "category": "ALIMENTOS"
+        },
+        {
+            "id": 6,
+            "name": "Feijão",
+            "price": 6.9,
+            "category": "ALIMENTOS"
+        }
+    ]
+    ```
 - Fazer um pedido
   
   > POST /add_order
 
   Envia uma requisição no seguinte formato:
 
-  ```json
-
-{
-    "productId": 3,
-    "productAmount": 1
-}
-	
-  ```
+    ```json
+    {
+        "productId": 3,
+        "productAmount": 1
+    }
+    ```
 
   E retorna a seguinte resposta:
 
-  ```json
+    ```json
+    {
+        "productId": 3,
+        "productName": "Nikito",
+        "productPrice": 2,
+        "productAmount": 1,
+        "orderValue": 2
+    }
+    ```
 
-{
-  "productId": 3,
-  "productName": "Nikito",
-  "productPrice": 2,
-  "productAmount": 1,
-  "orderValue": 2
-}
-
-  ```
 - Remover um pedido
 
   > DELETE /remove_order
@@ -194,10 +188,9 @@ Podendo ser visto em deploy no seguinte link: [https://market-sd.herokuapp.com](
             "orderValue": 17.89
         }
     ]
-
   ```
 
-  - Consultar o valor total do carrinho
+- Consultar o valor total do carrinho
 
   > GET /orders_value
 
@@ -207,7 +200,6 @@ Podendo ser visto em deploy no seguinte link: [https://market-sd.herokuapp.com](
     {
         "ordersValue": 21.69
     }
-
   ```
 
 - Esvaziar o carrinho e solicitar entrega
