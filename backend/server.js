@@ -2,9 +2,10 @@ require('dotenv').config();
 
 const { addOrder, removeOrder, getOrdersValue, getProducts, getProduct } = require('./functions.js');
 
-orders = [];
-
 const express = require('express');
+
+
+let orders = [];
 
 let app = express();
 
@@ -18,7 +19,9 @@ app.use((req, res, next) => {
 });
 
 app.get('/products', function (req, res) {
+
     res.json(getProducts());
+    
 });
 
 app.post('/add_order', function (req, res) {
@@ -71,14 +74,20 @@ app.post('/finish_orders', function (req, res) {
 
     let ordersValue = getOrdersValue(orders);
 
-    const { sendOrders } = require('./publisher.js');
+    try{
+        const { sendOrders } = require('./publisher.js');
     
-    console.log({"orders": orders, "ordersValue": ordersValue, "address": address});
-    sendOrders({"orders": orders, "ordersValue": ordersValue, "address": address});
+        console.log({"orders": orders, "ordersValue": ordersValue, "address": address});
+        sendOrders({"orders": orders, "ordersValue": ordersValue, "address": address});
 
-    orders = [];
+        orders = [];
 
-    res.sendStatus(200);
+        res.sendStatus(200);
+
+    } catch(e) {
+        console.error(e);
+        res.sendStatus(500);
+    }
 
 });
 

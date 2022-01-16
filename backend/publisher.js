@@ -1,8 +1,11 @@
+require('dotenv').config();
+
 const mqtt = require('mqtt');
+
 
 const pub = mqtt.connect('mqtt://test.mosquitto.org');
 
-const queue = "orders";
+const queue = process.env.QUEUE;
 
 function sendOrders(orders) {
 
@@ -17,5 +20,6 @@ function sendOrders(orders) {
     });
 
 };
+
 
 module.exports = { sendOrders }

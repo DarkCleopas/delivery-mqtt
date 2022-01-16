@@ -1,8 +1,11 @@
+require('dotenv').config();
+
 const mqtt = require('mqtt');
+
 
 const sub = mqtt.connect('mqtt://test.mosquitto.org');
 
-const queue = "orders";
+const queue = process.env.QUEUE;
 
 sub.on('connect', () => {
     console.log("Conectado ao broker MQTT");
@@ -17,7 +20,7 @@ sub.on('connect', () => {
 sub.on("message", (topic, message) => {
     if (topic === queue) {
         try{
-            console.log("Recebi um novo pedido!");
+            console.log("Um novo pedido apareceu!");
             
             const orders = JSON.parse(message.toString());
 
