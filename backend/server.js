@@ -10,7 +10,9 @@ let orders = [];
 let app = express();
 
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: true }));
+
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
@@ -21,12 +23,12 @@ app.use((req, res, next) => {
 app.get('/products', function (req, res) {
 
     res.json(getProducts());
-    
+
 });
 
 app.post('/add_order', function (req, res) {
 
-    const { productId, amount } = req.body;
+    const { productId, productAmount } = req.body;
 
     const { name, price } = getProduct(productId);
 
@@ -34,8 +36,8 @@ app.post('/add_order', function (req, res) {
         "productId": productId,
         "productName": name,
         "productPrice": price,
-        "productAmount": amount,
-        "orderValue": price*amount
+        "productAmount": productAmount,
+        "orderValue": price*productAmount
     }
 
     orders = addOrder(orders, order);
