@@ -2,13 +2,17 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mqtt": "^4.3.4"
+    "dotenv": "^12.0.4",
+    "express": "^4.17.2",
+    "mqtt": "^4.3.4",
+    "nodemon": "^2.0.15"
   }
 }

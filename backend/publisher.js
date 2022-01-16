@@ -4,12 +4,12 @@ const pub = mqtt.connect('mqtt://test.mosquitto.org');
 
 const queue = "orders";
 
-function sendOrder(order) {
+function sendOrders(orders) {
 
     pub.on('connect', () => {
         console.log("Conectado ao broker MQTT");
         
-        pub.publish(queue, JSON.stringify(order), {qos: 2, retain: true});
+        pub.publish(queue, JSON.stringify(orders), {qos: 2, retain: true});
     
         console.log("Pedido enviado com sucesso!");
     
@@ -18,4 +18,4 @@ function sendOrder(order) {
 
 };
 
-module.exports = { sendOrder }
+module.exports = { sendOrders }

@@ -19,9 +19,9 @@ sub.on("message", (topic, message) => {
         try{
             console.log("Recebi um novo pedido!");
             
-            const order = JSON.parse(message.toString());
+            const orders = JSON.parse(message.toString());
 
-            console.log(order);
+            console.log(orders);
         } catch(e) {
             console.error(e);
         }
