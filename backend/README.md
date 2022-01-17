@@ -20,8 +20,8 @@
   * [Pré-requisitos](#construction-pre-requisitos)
   * [Instalando dependências](#construction-instalando-dependencias)
   * [Rodando o Projeto](#arrow_forward-rodando-o-projeto)
-  * [Deploy](#arrow_forward-deploy)
 * [Documentação](#bookmark_tabs-documentacao)
+* [Deploy](#arrow_forward-deploy)
 * [Licença](#page_facing_up-licença)
 * [Autores](#woman_technologist-man_technologist-autores)
 
@@ -218,7 +218,7 @@ A aplicação funcionará em `http://localhost:4000`.
 
   E retorna status 200.
 
-### 🚧 Deploy
+## ▶️ Deploy
 
 Foi feito o deploy deste projeto no Heroku. Você pode usar essa url `https://darkcleopas-delivery-mqtt.herokuapp.com/` para realizar os testes sem precisar rodar a api principal. 
 
