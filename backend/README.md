@@ -20,6 +20,7 @@
   * [Pré-requisitos](#construction-pre-requisitos)
   * [Instalando dependências](#construction-instalando-dependencias)
   * [Rodando o Projeto](#arrow_forward-rodando-o-projeto)
+  * [Deploy](#arrow_forward-deploy)
 * [Documentação](#bookmark_tabs-documentacao)
 * [Licença](#page_facing_up-licença)
 * [Autores](#woman_technologist-man_technologist-autores)
@@ -45,9 +46,9 @@ Clone este repositório:
 
 $ git clone https://github.com/DarkCleopas/delivery-mqtt.git
 
-# Entre na pasta `delivery-rest/backend`:
+# Entre na pasta `delivery-mqtt/backend`:
 
-$ cd delivery-rest/backend
+$ cd delivery-mqtt/backend
 ```
 
 🚨 Se você não possui git instalado em sua máquina, você pode instalá-lo [aqui](https://git-scm.com/downloads).
@@ -69,13 +70,12 @@ Rode os seguintes comando:
 
 # Para o servidor
 
-$ yarn server
+$ yarn start
 
 ```
 
 A aplicação funcionará em `http://localhost:4000`.
 
-Podendo ser visto em deploy no seguinte link: [https://market-sd.herokuapp.com](https://market-sd.herokuapp.com).
 ## :bookmark_tabs: Documentação
 
 - Listar produtos
@@ -265,7 +265,7 @@ Um novo pedido apareceu!
 
 ## :page_facing_up: Licença
 
-Este projeto usa a licença [MIT](https://github.com/3salles/user-crud/blob/main/LICENSE).
+Este projeto usa a licença [MIT](https://github.com/DarkCleopas/user-crud/blob/main/LICENSE).
 
 ## :woman_technologist: :man_technologist: Autores
 
